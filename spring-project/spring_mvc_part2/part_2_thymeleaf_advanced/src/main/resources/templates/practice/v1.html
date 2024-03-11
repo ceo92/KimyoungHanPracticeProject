@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+
+
+<header>상단 영역</header>
+
+<main>메인 영역
+
+
+<div>
+
+
+  <div th:text="'hello'+'dude'">
+
+      <span th:text="0x100">1</span>
+      <span th:text="0x101">2</span>
+      <span th:text="0x102">3</span>
+
+
+    <div>
+      <h2 th:text="0x200">4</h2>
+      <h2 th:text="0x201">5</h2>
+      <h2 th:text="0x202">6</h2>
+    </div>
+
+    <span>
+      <b th:text="0x300">7</b>
+      <b th:text="0x301">8</b>
+      <b th:text="0x302">9</b>
+    </span>
+
+  </div>
+  <hr>
+  <div>
+    <span th:text="|span4 |"></span>
+    <span th:text="|span5 |"></span>
+    <span th:text="|span6 |"></span>
+  </div>
+</div>
+
+<div>
+  <div th:text="div1"></div>
+  <div th:text="div2"></div>
+  <div th:text="div3"></div>
+</div>
+
+
+
+</main>
+<footer th:text="byebye">하단 영역</footer>
+
+</body>
+</html>

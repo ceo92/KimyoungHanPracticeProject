@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h1 th:text="${session}">나는 세션</h1>
+<h1 th:text="'이름은 '+${oliveyoung['name']+'입니다 !'}"></h1>
+<h1 th:text="'나이는 '+${oliveyoung.age}+'입니다 !'"></h1>
+<h1 th:text="|직급은 ${oliveyoung.rank} 입니다 !|"></h1>
+<h1 th:if="${oliveyoung.age gt 20}" th:text="'조건문 출력'"></h1>
+<h1 th:text="${@helloData.helloData('Spring Boot')}"></h1>
+<h1 th:text="${param.age}+'우왕'"></h1>
+<h1 th:text="${param.name}+'대박'"></h1>
+<h1 th:text="${param.rank}+'멋있다'"></h1>
+
+
+<tr th:each="oliveyoung : ${oliveyoungs}">
+    <td th:text="|${oliveyoung} 올영 List !! |"></td>
+    <td th:text="|${oliveyoungStat.size} 올영 ListStat !! |"></td>
+</tr>
+
+<tr th:each="oliveyoung : ${oliveyoungMap}">
+    <td th:text="|${oliveyoung.value} 올영 Map !!|"></td>
+    <td th:text="|${oliveyoungStat.size} 올영 MapStat !!|"></td>
+</tr>
+
+
+
+
+
+
+
+
+<!--
+
+
+<h1 th:text="${oliveyoung.age}">0x100</h1>
+<h2 th:text="${oliveyoung.name}">0x200</h2>
+
+<li th:text="${oliveyoung['age']}">0x100</li>
+<li th:text="${oliveyoung['name']}">0x200</li>
+
+<li th:text="${oliveyoung.getAge()}">0x100</li>
+<li th:text="${oliveyoung.getName()}">0x200</li>
+
+<button class="w-100 btn btn-primary btn-lg"
+        onclick="location.href='index.html'"
+        th:onclick = "|location.href = '@{/hello-kyungmin/{oliveyoung}(oliveyoung=${oliveyoung.age})}|"
+        type="button">상품 수정</button>
+
+<li th:text="'hello'+${oliveyoung.age}">500</li>
+
+-->
+
+</body>
+</html>

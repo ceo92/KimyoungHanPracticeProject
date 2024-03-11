@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+  <form action = "/form/items" th:action th:method="post" th:object="${person}">
+    <div>
+      <label for="name" th:text="|이름 : |"></label>
+      <input type = "text" id="name" name = "name" , value = "이름을 입력하시오">
+    </div>
+
+    <div>
+      <label for="job" th:text="|직업 : |"></label>
+      <input type = "text" id="job" name="job" value = "직업을 입력하시오">
+    </div>
+
+
+    <div>
+      <label for="age" th:text="|나이 : |"></label>
+      <input type = "text" id="age" name="age" value = "나이를 입력하시오">
+    </div>
+
+    <div>
+      <label for="marry" th:text="|결혼 유무|"></label>
+      <input type="checkbox"  id="marry"  th:field="*{marry}">
+    </div>
+    <!--<div>취미 선택</div>
+    <div>
+      <input type = "checkbox" id="${}" name = "region" value = "seoul" >
+      <label for="region1" th:text="'서울'"></label>
+
+      <input type = "checkbox" id="region2" name = "region" value = "daegu">
+      <label for="region2" th:text="'대구'"></label>
+
+      <input type = "checkbox" id="region3" name = "region" value = "busan">
+      <label for="region3" th:text="'부산'"></label>
+    </div>-->
+
+
+    <button type="submit">
+    </button>
+
+
+  </form>
+</body>
+</html>

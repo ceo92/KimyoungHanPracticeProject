@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<table border="2">
+  <tr th:each="user : ${users}">
+    <td th:text="미성년자" th:if="${user['age'] lt 20}"></td>
+    <td th:text="미성년자" th:unless="${user['age'] gt 20}"></td>
+  </tr>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <tite th:text="|경민 연습 페이지입니다|"></tite>
+    <style>
+
+        .this-is-error{
+            background: rgb(255,0,0);
+            background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,153,0,1)
+            17%, rgba(232,255,0,1) 34%, rgba(0,98,13,1) 51%, rgba(6,32,172,1)
+            68%, rgba(16,13,125,1) 85%, rgba(0,212,255,1) 100%);
+
+            border-color: rgb(255,0,0);
+            border-color: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,153,0,1)
+            17%, rgba(232,255,0,1) 34%, rgba(0,98,13,1) 51%, rgba(6,32,172,1)
+            68%, rgba(16,13,125,1) 85%, rgba(0,212,255,1) 100%);
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <form th:action method="post" th:object="${major}">
+        <label for="professorName" th:text="|이름 : |">이름은?</label>
+        <input th:field="*{professorName}" type="text" id="professorName" class="form-control" th:errorclass="this-is-error" placeholder="교수명 입력하시오">
+        <p th:errors="*{professorName}" class="this-is-error">교수명 오류</p>
+
+
+        <label for="majorName" th:text="|나이 : |">나이는?</label>
+        <input th:field="*{majorName}" type="text" id="majorName" class="form-control" th:errorclass="this-is-error" placeholder="전공명 입력하시오">
+        <p th:errors="*{majorName}" class="this-is-error">전공명 오류</p>
+
+
+
+        <button class="w-100 btn btn-secondary btn-lg" type="submit"></button>
+    </form>
+</body>
+</html>

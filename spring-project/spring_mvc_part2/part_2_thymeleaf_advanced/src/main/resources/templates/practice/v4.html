@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+  <div>
+    <form th:object="${person}" th:action method ="post">
+
+      <div>
+        <div>--이름--</div>
+        <div class="name">
+          <label style = "color:blue" for="name" th:text="|name : |"></label>
+          <input type="text" th:field="*{name}" id="name" placeholder="이름을 입력하시오">
+        </div>
+      </div>
+
+      <div>
+        <div>--직업--</div>
+        <div class ="job">
+          <label style = "color:blue" for="job" th:text = "|job : |"></label>
+          <input type="text" th:field="*{job}" id="job" placeholder="직업을 입력하시오">
+        </div>
+      </div>
+
+      <div>
+        <div>--나이--</div>
+        <div class="age">
+          <label style = "color:blue" for = "age" th:text = "|age : |"></label>
+          <input type="text" th:field="*{age}" id="age" placeholder="나이를 입력하시오">
+        </div>
+      </div>
+
+      <div>
+        <div>--결혼 유무--</div>
+        <div class ="marry">
+          <input type="checkbox" th:field="*{marry}" id="marry" >
+          <label style = "color:blue" for="marry" th:text="|marital status|"></label>
+        </div>
+      </div>
+
+      <div>
+        <div>--취미--</div>
+        <div th:each="hobby : ${hobbies}" class="form-check form-check-inline">
+          <input type="checkbox" th:field="*{hobbies}" th:value="${hobby.key}" >
+          <label style = "color:blue" th:for ="${#ids.prev('hobbies')}" th:text="${hobby.value}"></label>
+        </div> <!-- th:field 역할 : 히든 필드 생성 + name , id , value 부여 + checked 위하여-->
+      </div>
+
+
+      <div>
+        <div>--최종 학력--</div>
+          <div th:each="education : ${educations}" class="form-check form-check-inline">
+            <input type="radio" th:field="*{education}" th:value="${education.name()}" >
+            <label style = "color:red" th:for ="${#ids.prev('education')}" th:text="${education.finalEdu}"></label>
+        </div> <!-- th:field 역할 : 히든 필드 생성 + name , id , value 부여 + checked 위하여-->
+      </div>
+
+
+
+
+      <div>
+        <div>--희망 급여--</div>
+          <div th:each="education : ${educations}" class="form-check form-check-inline">
+            <input type="radio" th:field="*{education}" th:value="${education.name()}" >
+            <label style = "color:red" th:for ="${#ids.prev('education')}" th:text="${education.finalEdu}"></label>
+        </div> <!-- th:field 역할 : 히든 필드 생성 + name , id , value 부여 + checked 위하여-->
+      </div>
+
+
+
+
+
+      <div>
+        <button></button>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+</html>

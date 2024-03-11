@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+<div th:replace="~{/template/fragment/footer :: copy}"></div>
+<div th:insert="~{/template/fragment/footer :: copy}"></div>
+
+
+<div th:replace="~{@{/template/fragment/footer} :: copyParam('파라메터1' , '파라메터2')}"></div>
+<div th:insert="~{@{/template/fragment/footer} :: copyParam('파라메터1' , '파라메터2')}"></div>
+
+
+<div th:replace="/template/fragment/footer :: copyParam(|단순표현식1| , |단순표현식2|)"></div>
+<div th:insert="/template/fragment/footer :: copyParam('단순표현식1' , '단순표현식2')"></div>
+
+</body>
+</html>

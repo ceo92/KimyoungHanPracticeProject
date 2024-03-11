@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+.container {
+ max-width: 560px;
+ }
+
+ .field-error {
+ border-color: #dc3545;
+ color: #dc3545;
+ }
+    </style>
+    <title th:text="|경민페이지입니다|">나는경민</title>
+
+</head>
+<body>
+    <div class="container">
+
+
+        <form th:action method="post" th:object="${loginForm}">
+
+            <div th:if="${#fields.hasGlobalErrors()}">
+                <p class="field-error"
+                   th:each="err : ${#fields.globalErrors()}"
+                   th:text="${err}">글로벌 오류 메시지</p>
+                <!--th:class해야되나 그냥 class 해야되나-->
+            </div>
+
+
+            <div>
+                <label for="loginId" th:text="'아이디를'+'입력하세요'">네추럴템플릿 작동 확인용</label>
+                <input th:errorclass="field-error" class="form-control" id="loginId" th:field="*{loginId}" placeholder="입력">
+                <div class="field-error" th:errors="*{loginId}"></div>
+            </div>
+
+            <div>
+                <label for="password" th:text="|비밀번호를 입력하세요 : |">네추럴템플릿 작동 확인용</label>
+                <input th:errorclass="field-error" class="form-control" id="password" th:field="*{password}" placeholder="입력">
+                <div class="field-error" th:errors="*{password}"></div>
+            </div>
+
+            <button onclick="submit"></button>
+
+        </form>
+    </div>
+</body>
+</html>

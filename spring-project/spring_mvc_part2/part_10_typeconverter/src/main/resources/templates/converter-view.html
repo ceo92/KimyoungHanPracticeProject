@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+
+
+    <link rel="stylesheet" href="./Desktop/rainbow_text.css">
+</head>
+<body>
+<ul>
+    <li>${number}: <span th:class = "text_color" th:text="${number}" ></span></li>
+    <li>${{number}}: <span th:class = "text_color" th:text="${{number}}" ></span></li>
+    <li>${ipPort}: <span th:class = "text_color"th:text="${ipPort}" ></span></li>
+    <li>${{ipPort}}: <span th:class = "text_color" th:text="${{ipPort}}" ></span></li>
+</ul>
+</body>
+</html>
