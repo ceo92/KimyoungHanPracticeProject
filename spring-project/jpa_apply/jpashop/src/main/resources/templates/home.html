@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: header}"> <!--조각 경로 :: 조각 이름 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div th:replace="~{fragments/bodyHeader :: bodyHeader}"></div>
+        <div class="jumbotron">
+            <h1 th:text="|HELLO SHOP|"></h1>
+
+                <h2 class="lead" th:text="회원기능"></h2>
+                <p>
+                    <button class="btn btn-lg btn-secondary" th:text="회원가입" th:onclick="|location.href='@{/member/join}'|"></button>
+                    <button class="btn btn-lg btn-secondary" th:text="회원목록" th:onclick="|location.href='@{/member/list}'|"></button>
+                </p>
+
+
+
+                <h2 class="lead" th:text="|상품기능|"></h2>
+                <p>
+                    <button class="btn btn-lg btn-dark" th:text="상품등록" th:onclick="|location.href='@{/item/register}'|"></button>
+                    <button class="btn btn-lg btn-dark" th:text="상품목록" th:onclick="|location.href='@{/item/list}'|"></button>
+                </p>
+
+
+
+                <h2 class="lead" th:text="주문기능"></h2>
+                <p>
+                    <button class="btn btn-lg btn-info" th:text="상품주문" th:onclick="|location.href='@{/order}'|"></button>
+                    <button class="btn btn-lg btn-info" th:text="주문내역" th:onclick="|location.href='@{/order/list}'|"></button>
+                </p>
+
+        </div>
+    <div th:replace="~{fragments/footer :: footer}"></div>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>상품 등록</h1>
+<form th:action th:object="${item}" method="post">
+
+
+    <div>
+        <div th:errors="*{name}"></div>
+        <label for="name" th:text="|상품명 : |"></label>
+        <input th:placeholder="|상품명을 입력하세요|" th:field="*{name}">
+    </div>
+
+    <div>
+        <div th:errors="*{price}"></div>
+        <label for="price" th:text="|가격 : |"></label>
+        <input th:placeholder="|가격을 입력하세요|" th:field="*{price}">
+    </div>
+
+    <div>
+        <div th:errors="*{stockQuantity}"></div>
+        <label for="stockQuantity" th:text="|수량 : |"></label>
+        <input th:placeholder="|수량을 입력하세요|" th:field="*{stockQuantity}">
+
+    </div>
+
+    <div>
+        <div th:errors="*{author}"></div>
+        <label for="author" th:text="|작가 : |"></label>
+        <input th:placeholder="|작가를 입력하세요|" th:field="*{author}">
+
+    </div>
+
+    <div>
+        <div th:errors="*{isbn}"></div>
+        <label for="isbn" th:text="|ISBN : |"></label>
+        <input th:placeholder="|ISBN을 입력하세요|" th:field="*{isbn}">
+    </div>
+
+    <button th:text="Submit" style="width:100px;height:100px"></button>
+
+
+</form>
+
+</body>
+</html>

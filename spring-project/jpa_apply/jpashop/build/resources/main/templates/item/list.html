@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/css/bootstrap.min.css}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .text_color{
+                    background: rgb(255,0,0);
+                     background: linear-gradient(120deg, rgba(255,0,0,1) 0%, rgba(255,141,0,1) 17%, rgba(245,255,0,1) 34%,
+                    rgba(34,106,42,1) 51%, rgba(4,37,240,1) 68%, rgba(13,27,147,1) 85%, rgba(94,0,255,1) 100%);
+                background-clip: text;
+               -webkit-background-clip: text;
+              color: transparent;
+                    }
+
+    </style>
+</head>
+<body>
+
+<h2 th:class="text_color" th:text="|HELLO SHOP|"></h2>
+<table> <!-- tr에다 th:each 한번 서보기 !-->
+    <thead>
+        <tr>
+            <td><b>#</b></td>
+            <td><b>상품명</b></td>
+            <td><b>가격</b></td>
+            <td><b>재고수량</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <th:block th:each="item : ${items}">
+            <tr>
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.price}"></td>
+                <td th:text="${item.stockQuantity}"></td>
+                <td><button class="btn btn-primary btn-lg" th:text="수정" th:onclick="|location.href='@{/item/{itemId}/edit(itemId=${item.id})}'|"></button></td>
+            </tr>
+        </th:block>
+    </tbody>
+</table>
+</body>
+</html>
