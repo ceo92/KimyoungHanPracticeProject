@@ -1,1 +1,1 @@
-# MySpringPracticeProject
+# 김영한 실습용 리포
